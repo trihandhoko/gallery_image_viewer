@@ -1,4 +1,4 @@
-import 'package:easy_image_viewer/easy_image_viewer.dart';
+import 'package:easy_image_viewer/gallery_image_viewer.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -32,17 +32,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   final List<ImageProvider> _imageProviders = [
-    Image
-        .network("https://picsum.photos/id/237/200/300")
-        .image,
-    Image
-        .network("https://picsum.photos/seed/picsum/200/300")
-        .image,
-    Image
-        .network("https://picsum.photos/200/300?grayscale")
-        .image,
+    Image.network("https://picsum.photos/id/237/200/300").image,
+    Image.network("https://picsum.photos/seed/picsum/200/300").image,
+    Image.network("https://picsum.photos/200/300?grayscale").image,
     Image.network("https://picsum.photos/200/300").image,
     Image.network("https://picsum.photos/200/300?grayscale").image
   ];
@@ -56,51 +49,53 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SingleChildScrollView(
         child: Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                    child: const Text("Show Single Image"),
-                    onPressed: () {
-                      showImageViewer(
-                          context, Image
-                          .network("https://picsum.photos/id/237/200/300")
-                          .image,
-                          swipeDismissible: true);
-                    }),
-                ElevatedButton(
-                    child: const Text("Show Multiple Images (Simple)"),
-                    onPressed: () {
-                      MultiImageProvider multiImageProvider = MultiImageProvider(_imageProviders);
-                      showImageViewerPager(context, multiImageProvider, swipeDismissible: true);
-                    }),
-                const Text("<<<< Gallery type 1 >>>>"),
-                GalleryImageView(
-                  listImage: _imageProviders,
-                  width: 200,
-                  height: 200,
-                  imageDecoration: BoxDecoration(border: Border.all(color: Colors.white)),
-                  galleryType: 1,
-                ),
-                const SizedBox(height: 10,),
-                const Text("<<<< Gallery type 2 >>>>"),
-                GalleryImageView(
-                  listImage: _imageProviders,
-                  width: 200,
-                  height: 200,
-                  imageDecoration: BoxDecoration(border: Border.all(color: Colors.white)),
-                  galleryType: 2,
-                ),
-                const SizedBox(height: 10,),
-                const Text("<<<< Gallery type 3 >>>>"),
-                GalleryImageView(
-                  listImage: _imageProviders,
-                  width: 200,
-                  height: 200,
-                  imageDecoration: BoxDecoration(border: Border.all(color: Colors.white)),
-                  galleryType: 3,
-                )
-              ],
-            )),
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+                child: const Text("Show Single Image"),
+                onPressed: () {
+                  showImageViewer(
+                      context, Image.network("https://picsum.photos/id/237/200/300").image,
+                      swipeDismissible: true);
+                }),
+            ElevatedButton(
+                child: const Text("Show Multiple Images (Simple)"),
+                onPressed: () {
+                  MultiImageProvider multiImageProvider = MultiImageProvider(_imageProviders);
+                  showImageViewerPager(context, multiImageProvider, swipeDismissible: true);
+                }),
+            const Text("<<<< Gallery type 1 >>>>"),
+            GalleryImageView(
+              listImage: _imageProviders,
+              width: 200,
+              height: 200,
+              imageDecoration: BoxDecoration(border: Border.all(color: Colors.white)),
+              galleryType: 1,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const Text("<<<< Gallery type 2 >>>>"),
+            GalleryImageView(
+              listImage: _imageProviders,
+              width: 200,
+              height: 200,
+              imageDecoration: BoxDecoration(border: Border.all(color: Colors.white)),
+              galleryType: 2,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const Text("<<<< Gallery type 3 >>>>"),
+            GalleryImageView(
+              listImage: _imageProviders,
+              width: 200,
+              height: 200,
+              imageDecoration: BoxDecoration(border: Border.all(color: Colors.white)),
+              galleryType: 3,
+            )
+          ],
+        )),
       ),
     );
   }

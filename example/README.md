@@ -1,6 +1,6 @@
-# easy_image_viewer_example
+# gallery_image_viewer_example
 
-Demonstrates how to use the easy_image_viewer package.
+Demonstrates how to use the gallery_image_viewer package.
 
 ## Getting Started
 

@@ -1,6 +1,6 @@
 /// A library to easily display images in a full-screen dialog.
 /// It supports pinch & zoom, and paging through multiple images.
-library easy_image_viewer;
+library gallery_image_viewer;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

@@ -1,6 +1,6 @@
-import 'package:easy_image_viewer/src/easy_image_view.dart';
-import 'package:easy_image_viewer/src/multi_image_provider.dart';
-import 'package:easy_image_viewer/src/easy_image_view_pager.dart';
+import 'package:gallery_image_viewer/src/easy_image_view.dart';
+import 'package:gallery_image_viewer/src/multi_image_provider.dart';
+import 'package:gallery_image_viewer/src/easy_image_view_pager.dart';
 
 import 'support/test_helper.dart';
 

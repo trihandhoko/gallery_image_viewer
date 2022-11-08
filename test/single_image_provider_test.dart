@@ -1,4 +1,4 @@
-import 'package:easy_image_viewer/src/single_image_provider.dart';
+import 'package:gallery_image_viewer/src/single_image_provider.dart';
 
 import 'support/test_helper.dart';
 

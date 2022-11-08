@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../easy_image_viewer.dart';
+import '../gallery_image_viewer.dart';
 
 class GalleryImageView extends StatelessWidget {
   /// The image to display
