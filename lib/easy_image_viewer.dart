@@ -15,6 +15,7 @@ export 'src/multi_image_provider.dart' show MultiImageProvider;
 
 export 'src/easy_image_view.dart' show EasyImageView;
 export 'src/easy_image_view_pager.dart' show EasyImageViewPager;
+export 'src/gallery_image_view.dart' show GalleryImageView;
 
 // Defined here so we don't repeat ourselves
 const _defaultBackgroundColor = Colors.black;
