@@ -1,6 +1,6 @@
 {
-    "name": "easy_image_viewer_example",
-    "short_name": "easy_image_viewer_example",
+    "name": "gallery_image_viewer_example",
+    "short_name": "gallery_image_viewer_example",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

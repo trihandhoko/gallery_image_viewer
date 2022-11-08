@@ -1,4 +1,4 @@
-import 'package:easy_image_viewer/gallery_image_viewer.dart';
+import 'package:gallery_image_viewer/gallery_image_viewer.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());

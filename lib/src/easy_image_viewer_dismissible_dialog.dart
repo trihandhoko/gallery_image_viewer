@@ -45,7 +45,7 @@ class _EasyImageViewerDismissibleDialogState
   void Function()? _internalPageChangeListener;
   late final PageController _pageController;
 
-  /// This is needed because of https://github.com/thesmythgroup/easy_image_viewer/issues/27
+  /// This is needed because of https://github.com/thesmythgroup/gallery_image_viewer/issues/27
   /// When no global key was used, the state was re-created on the initial zoom, which
   /// caused the new state to have _pagingEnabled set to true, which in turn broke
   /// paning on the zoomed-in image.
@@ -128,7 +128,7 @@ class _EasyImageViewerDismissibleDialogState
 
             _handleDismissal();
           },
-          key: const Key('dismissible_easy_image_viewer_dialog'),
+          key: const Key('dismissible_gallery_image_viewer_dialog'),
           child: popScopeAwareDialog);
     } else {
       return popScopeAwareDialog;

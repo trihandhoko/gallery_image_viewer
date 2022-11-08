@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(easy_image_viewer_example LANGUAGES CXX)
+project(gallery_image_viewer_example LANGUAGES CXX)
 
-set(BINARY_NAME "easy_image_viewer_example")
+set(BINARY_NAME "gallery_image_viewer_example")
 
 cmake_policy(SET CMP0063 NEW)
 
