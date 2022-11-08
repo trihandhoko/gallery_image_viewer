@@ -51,11 +51,14 @@ class GalleryImageView extends StatelessWidget {
     /// The gallery type was sent, call _uiImage on the gallery type sent.
     if (galleryType == 0) {
       if (listImage.length >= 2 && listImage.length < 5) {
-        return SizedBox(width: width, height: height, child: _uiImage2(context));
+        return SizedBox(
+            width: width, height: height, child: _uiImage2(context));
       } else if (listImage.length >= 5) {
-        return SizedBox(width: width, height: height, child: _uiImage3(context));
+        return SizedBox(
+            width: width, height: height, child: _uiImage3(context));
       } else {
-        return SizedBox(width: width, height: height, child: _uiImage1(context));
+        return SizedBox(
+            width: width, height: height, child: _uiImage1(context));
       }
     } else if (galleryType == 2) {
       return SizedBox(width: width, height: height, child: _uiImage2(context));
@@ -98,8 +101,10 @@ class GalleryImageView extends StatelessWidget {
                         alignment: Alignment.center,
                         child: Text(
                           i == 3 ? "+$imgMore" : "",
-                          style:
-                              TextStyle(color: textColor, fontSize: fontSize, shadows: textShadow),
+                          style: TextStyle(
+                              color: textColor,
+                              fontSize: fontSize,
+                              shadows: textShadow),
                         ),
                       ),
                     ),
@@ -197,16 +202,20 @@ class GalleryImageView extends StatelessWidget {
                           child: InkWell(
                             onTap: () {
                               MultiImageProvider multiImageProvider =
-                                  MultiImageProvider(listImage, initialIndex: i);
+                                  MultiImageProvider(listImage,
+                                      initialIndex: i);
                               showImageViewerPager(context, multiImageProvider,
-                                  backgroundColor: Colors.black.withOpacity(0.3));
+                                  backgroundColor:
+                                      Colors.black.withOpacity(0.3));
                             },
                             child: Align(
                               alignment: Alignment.center,
                               child: Text(
                                 i == 3 ? "+$imgMore" : "",
                                 style: TextStyle(
-                                    color: textColor, fontSize: fontSize, shadows: textShadow),
+                                    color: textColor,
+                                    fontSize: fontSize,
+                                    shadows: textShadow),
                               ),
                             ),
                           ),
@@ -326,7 +335,8 @@ class GalleryImageView extends StatelessWidget {
                       decoration: imageDecoration,
                       child: Container(
                         decoration: BoxDecoration(
-                          image: DecorationImage(image: listImage[i], fit: boxFit),
+                          image:
+                              DecorationImage(image: listImage[i], fit: boxFit),
                         ),
                         width: double.infinity,
                         height: double.infinity,
@@ -335,16 +345,20 @@ class GalleryImageView extends StatelessWidget {
                           child: InkWell(
                             onTap: () {
                               MultiImageProvider multiImageProvider =
-                                  MultiImageProvider(listImage, initialIndex: i);
+                                  MultiImageProvider(listImage,
+                                      initialIndex: i);
                               showImageViewerPager(context, multiImageProvider,
-                                  backgroundColor: Colors.black.withOpacity(0.3));
+                                  backgroundColor:
+                                      Colors.black.withOpacity(0.3));
                             },
                             child: Align(
                               alignment: Alignment.center,
                               child: Text(
                                 i == 3 ? "+$imgMore" : "",
                                 style: TextStyle(
-                                    color: textColor, fontSize: fontSize, shadows: textShadow),
+                                    color: textColor,
+                                    fontSize: fontSize,
+                                    shadows: textShadow),
                               ),
                             ),
                           ),
