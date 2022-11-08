@@ -9,3 +9,7 @@
 - 20/30 points: code has no errors, warnings, lints, or formatting issues
   lib/src/gallery_image_view.dart doesn't match the Dart formatter.
   To format your files run: flutter format .
+
+
+## 1.2.0
+- Update README.
