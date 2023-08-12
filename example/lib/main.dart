@@ -58,6 +58,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       context,
                       Image.network("https://picsum.photos/id/237/200/300")
                           .image,
+                      titleImage: 'This is the title of the image',
+                      descriptionImage: 'This is the description of the image asjdakjsdhasd kajsdh askdjahsd aksjdhak sdjhasdk jahsd kajsdhak sjdhak sdj aksdjhaksjdh aksd aksjhda ksjdhaksd ahksjd haksdjhak sdjhak sjdhak sdjhaksdj has dkjahsdkaj sdhkajshdkajshd kasj djaksd',
+                      timeImage: '21 Januari 1970 10:30',
                       swipeDismissible: true);
                 }),
             ElevatedButton(
