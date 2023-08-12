@@ -35,15 +35,20 @@ Future<Dialog?> showImageViewer(
     BuildContext context, ImageProvider imageProvider,
     {bool immersive = true,
     void Function()? onViewerDismissed,
+    String? titleImage,
+    String? timeImage,
+    String? descriptionImage,
     bool useSafeArea = false,
     bool swipeDismissible = false,
     Color backgroundColor = _defaultBackgroundColor,
     String closeButtonTooltip = _defaultCloseButtonTooltip,
     Color closeButtonColor = _defaultCloseButtonColor}) {
   return showImageViewerPager(context, SingleImageProvider(imageProvider),
+      titleImage: titleImage,
+      timeImage: timeImage,
+      descriptionImage: descriptionImage,
       immersive: immersive,
-      onViewerDismissed:
-          onViewerDismissed != null ? (_) => onViewerDismissed() : null,
+      onViewerDismissed: onViewerDismissed != null ? (_) => onViewerDismissed() : null,
       useSafeArea: useSafeArea,
       swipeDismissible: swipeDismissible,
       backgroundColor: backgroundColor,
@@ -68,11 +73,15 @@ Future<Dialog?> showImageViewerPager(
     {bool immersive = true,
     void Function(int)? onPageChanged,
     void Function(int)? onViewerDismissed,
+    String? titleImage,
+    String? timeImage,
+    String? descriptionImage,
     bool useSafeArea = false,
     bool swipeDismissible = false,
     Color backgroundColor = _defaultBackgroundColor,
     String closeButtonTooltip = _defaultCloseButtonTooltip,
-    Color closeButtonColor = _defaultCloseButtonColor}) {
+    Color closeButtonColor = _defaultCloseButtonColor,
+    }) {
   if (immersive) {
     // Hide top and bottom bars
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
@@ -82,14 +91,57 @@ Future<Dialog?> showImageViewerPager(
       context: context,
       useSafeArea: useSafeArea,
       builder: (context) {
-        return EasyImageViewerDismissibleDialog(imageProvider,
-            immersive: immersive,
-            onPageChanged: onPageChanged,
-            onViewerDismissed: onViewerDismissed,
-            useSafeArea: useSafeArea,
-            swipeDismissible: swipeDismissible,
-            backgroundColor: backgroundColor,
-            closeButtonColor: closeButtonColor,
-            closeButtonTooltip: closeButtonTooltip);
+        return Stack(
+          children: [
+            EasyImageViewerDismissibleDialog(imageProvider,
+                immersive: immersive,
+                onPageChanged: onPageChanged,
+                onViewerDismissed: onViewerDismissed,
+                useSafeArea: useSafeArea,
+                swipeDismissible: swipeDismissible,
+                backgroundColor: backgroundColor,
+                closeButtonColor: closeButtonColor,
+                closeButtonTooltip: closeButtonTooltip),
+                descriptionImage != null ? Positioned(
+                  bottom: 0,
+                  child: Container(
+                    width: MediaQuery.sizeOf(context).width,
+                    margin: const EdgeInsets.fromLTRB(15, 12, 15, 20),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        DefaultTextStyle(
+                          style: const TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold, fontStyle: FontStyle.normal),
+                          child: Text(titleImage.toString(),  textAlign: TextAlign.left, maxLines: 3, overflow: TextOverflow.ellipsis,),),
+                        
+                        timeImage != null ? Container(
+                          margin: const EdgeInsets.only(top: 0),
+                          child: Row(
+                            children: [
+                              const Icon(Icons.access_time_sharp, color: Colors.white, size: 11,),
+                              const SizedBox(width: 5),
+                              DefaultTextStyle(
+                              style: const TextStyle(color: Colors.white, fontSize: 10, fontStyle: FontStyle.normal),
+                              child: Text(timeImage,  textAlign: TextAlign.left,),),
+                            ],
+                          ),
+                        ) : Container(),
+                        const SizedBox(height: 10),
+                        Row(
+                          children: [
+                            Flexible(
+                              child: DefaultTextStyle(
+                                style: const TextStyle(color: Colors.white, fontSize: 12, fontStyle: FontStyle.normal),
+                                child: Text(descriptionImage,  textAlign: TextAlign.left,),),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ) : Container()
+          ],
+        );
       });
 }
