@@ -154,7 +154,7 @@ Future<Dialog?> showImageViewerPager(
                           children: [
                             Flexible(
                               child: DefaultTextStyle(
-                                style: const TextStyle(color: Colors.white, fontSize: 12, fontStyle: FontStyle.normal,),
+                                style: TextStyle(color: Colors.white, fontSize: descriptionTextSize, fontStyle: FontStyle.normal,),
                                 child: Text(descriptionImage,  textAlign: TextAlign.left,),),
                             ),
                           ],
