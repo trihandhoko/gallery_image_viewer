@@ -19,6 +19,8 @@ class EasyImageViewerDismissibleDialog extends StatefulWidget {
   final String closeButtonTooltip;
   final Color closeButtonColor;
   final double? closeButtonSize;
+  final double? topPositionCloseButton;
+  final double? rightPositionCloseButton;
 
   /// Refer to [showImageViewerPager] for the arguments
   const EasyImageViewerDismissibleDialog(this.imageProvider,
@@ -29,6 +31,8 @@ class EasyImageViewerDismissibleDialog extends StatefulWidget {
       this.useSafeArea = false,
       this.swipeDismissible = false,
       this.closeButtonSize = 30,
+      this.topPositionCloseButton = 5,
+      this.rightPositionCloseButton = 5,
       required this.backgroundColor,
       required this.closeButtonTooltip,
       required this.closeButtonColor})
@@ -97,8 +101,8 @@ class _EasyImageViewerDismissibleDialogState extends State<EasyImageViewerDismis
                     });
                   }),
               Positioned(
-                  top: 5,
-                  right: 5,
+                  top: widget.topPositionCloseButton,
+                  right: widget.rightPositionCloseButton,
                   child: IconButton(
                     icon: Icon(
                       Icons.close,
