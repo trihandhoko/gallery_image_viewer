@@ -134,17 +134,17 @@ Future<Dialog?> showImageViewerPager(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         DefaultTextStyle(
-                          style: const TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold, fontStyle: FontStyle.normal),
+                          style: TextStyle(color: Colors.white, fontSize: titleTextSize, fontWeight: FontWeight.bold, fontStyle: FontStyle.normal),
                           child: Text(titleImage.toString(),  textAlign: TextAlign.left, maxLines: 3, overflow: TextOverflow.ellipsis,),),
                         
                         timeImage != null ? Container(
                           margin: const EdgeInsets.only(top: 0),
                           child: Row(
                             children: [
-                              const Icon(Icons.access_time_sharp, color: Colors.white, size: 11,),
+                              Icon(Icons.access_time_sharp, color: Colors.white, size: timeTextSize,),
                               const SizedBox(width: 5),
                               DefaultTextStyle(
-                              style: const TextStyle(color: Colors.white, fontSize: 10, fontStyle: FontStyle.normal),
+                              style: TextStyle(color: Colors.white, fontSize: timeTextSize, fontStyle: FontStyle.normal,),
                               child: Text(timeImage,  textAlign: TextAlign.left,),),
                             ],
                           ),
