@@ -38,22 +38,31 @@ Future<Dialog?> showImageViewer(
     String? titleImage,
     String? timeImage,
     String? descriptionImage,
+    double? iconCloseSize,
+    double? titleTextSize,
+    double? descriptionTextSize,
+    double? timeTextSize,
     bool useSafeArea = false,
     bool swipeDismissible = false,
     Color backgroundColor = _defaultBackgroundColor,
     String closeButtonTooltip = _defaultCloseButtonTooltip,
-    Color closeButtonColor = _defaultCloseButtonColor}) {
+    Color closeButtonColor = _defaultCloseButtonColor,
+    }) {
   return showImageViewerPager(context, SingleImageProvider(imageProvider),
       titleImage: titleImage,
       timeImage: timeImage,
       descriptionImage: descriptionImage,
+      iconCloseSize: iconCloseSize,
+      titleTextSize: titleTextSize,
+      descriptionTextSize: descriptionTextSize,
+      timeTextSize: timeTextSize,
       immersive: immersive,
       onViewerDismissed: onViewerDismissed != null ? (_) => onViewerDismissed() : null,
       useSafeArea: useSafeArea,
       swipeDismissible: swipeDismissible,
       backgroundColor: backgroundColor,
       closeButtonTooltip: closeButtonTooltip,
-      closeButtonColor: closeButtonColor);
+      closeButtonColor: closeButtonColor,);
 }
 
 /// Shows the images provided by the [imageProvider] in a full-screen PageView [Dialog].
@@ -76,6 +85,10 @@ Future<Dialog?> showImageViewerPager(
     String? titleImage,
     String? timeImage,
     String? descriptionImage,
+    double? iconCloseSize,
+    double? titleTextSize,
+    double? descriptionTextSize,
+    double? timeTextSize,
     bool useSafeArea = false,
     bool swipeDismissible = false,
     Color backgroundColor = _defaultBackgroundColor,
@@ -101,6 +114,7 @@ Future<Dialog?> showImageViewerPager(
                 swipeDismissible: swipeDismissible,
                 backgroundColor: backgroundColor,
                 closeButtonColor: closeButtonColor,
+                closeButtonSize: iconCloseSize,
                 closeButtonTooltip: closeButtonTooltip),
                 descriptionImage != null ? Positioned(
                   bottom: 0,
@@ -132,7 +146,7 @@ Future<Dialog?> showImageViewerPager(
                           children: [
                             Flexible(
                               child: DefaultTextStyle(
-                                style: const TextStyle(color: Colors.white, fontSize: 12, fontStyle: FontStyle.normal),
+                                style: const TextStyle(color: Colors.white, fontSize: 12, fontStyle: FontStyle.normal,),
                                 child: Text(descriptionImage,  textAlign: TextAlign.left,),),
                             ),
                           ],
